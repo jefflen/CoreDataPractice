@@ -22,8 +22,7 @@ class AddPersonViewController: UIViewController, UITextFieldDelegate {
         self.addButton.isEnabled = false
         self.textField.delegate = self
         
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        self.dataConnector = CoreDataConnection(context: context)
+        self.dataConnector = CoreDataConnection()
     }
     
     override func viewWillAppear(_ animated: Bool) {

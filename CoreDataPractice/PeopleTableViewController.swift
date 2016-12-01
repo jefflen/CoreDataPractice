@@ -28,8 +28,7 @@ class PeopleTableViewController: UITableViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPerson(_:)))
         
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        self.dataConnector = CoreDataConnection(context: context)
+        self.dataConnector = CoreDataConnection()
     }
     
     override func viewWillAppear(_ animated: Bool) {

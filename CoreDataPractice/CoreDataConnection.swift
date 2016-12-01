@@ -19,13 +19,6 @@ fileprivate struct CoreDataPropertyName {
 
 public class CoreDataConnection: NSObject {
     
-    var context: NSManagedObjectContext! = nil
-    
-    init(context: NSManagedObjectContext) {
-        super.init()
-        self.context = context
-    }
-    
     public func insertPerson(withName name: String) -> Bool {
         let newData = NSEntityDescription.insertNewObject(forEntityName: CoreDataEntityName.person, into: self.context)
         
@@ -55,5 +48,35 @@ public class CoreDataConnection: NSObject {
         }
         
         return nil
+    }
+    
+    // MARK: - Core Data stack
+    
+    fileprivate lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "CoreDataPractice")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
+    
+    fileprivate var context: NSManagedObjectContext {
+        return self.persistentContainer.viewContext
+    }
+    
+    // MARK: - Core Data Saving support
+    
+    fileprivate func saveContext () {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
     }
 }
