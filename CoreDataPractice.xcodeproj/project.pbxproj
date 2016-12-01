@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		E425527F1DF077CD009FD534 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425527E1DF077CD009FD534 /* AppDelegate.swift */; };
-		E42552811DF077CD009FD534 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42552801DF077CD009FD534 /* ViewController.swift */; };
 		E42552841DF077CD009FD534 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E42552821DF077CD009FD534 /* Main.storyboard */; };
 		E42552871DF077CD009FD534 /* CoreDataPractice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E42552851DF077CD009FD534 /* CoreDataPractice.xcdatamodeld */; };
 		E42552891DF077CD009FD534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E42552881DF077CD009FD534 /* Assets.xcassets */; };
 		E425528C1DF077CD009FD534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E425528A1DF077CD009FD534 /* LaunchScreen.storyboard */; };
+		E42552951DF0786C009FD534 /* CoreDataConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42552941DF0786C009FD534 /* CoreDataConnection.swift */; };
+		E42552981DF07B7C009FD534 /* PeopleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42552971DF07B7C009FD534 /* PeopleTableViewController.swift */; };
+		E425529A1DF07B87009FD534 /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42552991DF07B87009FD534 /* AddPersonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E425527B1DF077CD009FD534 /* CoreDataPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E425527E1DF077CD009FD534 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E42552801DF077CD009FD534 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E42552831DF077CD009FD534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E42552861DF077CD009FD534 /* CoreDataPractice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataPractice.xcdatamodel; sourceTree = "<group>"; };
 		E42552881DF077CD009FD534 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E425528B1DF077CD009FD534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E425528D1DF077CD009FD534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E42552941DF0786C009FD534 /* CoreDataConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataConnection.swift; sourceTree = "<group>"; };
+		E42552971DF07B7C009FD534 /* PeopleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewController.swift; sourceTree = "<group>"; };
+		E42552991DF07B87009FD534 /* AddPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +60,9 @@
 		E425527D1DF077CD009FD534 /* CoreDataPractice */ = {
 			isa = PBXGroup;
 			children = (
+				E42552931DF07855009FD534 /* Model */,
+				E42552961DF07B6A009FD534 /* View Controllers */,
 				E425527E1DF077CD009FD534 /* AppDelegate.swift */,
-				E42552801DF077CD009FD534 /* ViewController.swift */,
 				E42552821DF077CD009FD534 /* Main.storyboard */,
 				E42552881DF077CD009FD534 /* Assets.xcassets */,
 				E425528A1DF077CD009FD534 /* LaunchScreen.storyboard */,
@@ -65,6 +70,23 @@
 				E42552851DF077CD009FD534 /* CoreDataPractice.xcdatamodeld */,
 			);
 			path = CoreDataPractice;
+			sourceTree = "<group>";
+		};
+		E42552931DF07855009FD534 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E42552941DF0786C009FD534 /* CoreDataConnection.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E42552961DF07B6A009FD534 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E42552971DF07B7C009FD534 /* PeopleTableViewController.swift */,
+				E42552991DF07B87009FD534 /* AddPersonViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +121,7 @@
 				TargetAttributes = {
 					E425527A1DF077CD009FD534 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = RNP7AH998X;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -139,9 +162,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E42552811DF077CD009FD534 /* ViewController.swift in Sources */,
 				E42552871DF077CD009FD534 /* CoreDataPractice.xcdatamodeld in Sources */,
+				E42552951DF0786C009FD534 /* CoreDataConnection.swift in Sources */,
+				E42552981DF07B7C009FD534 /* PeopleTableViewController.swift in Sources */,
 				E425527F1DF077CD009FD534 /* AppDelegate.swift in Sources */,
+				E425529A1DF07B87009FD534 /* AddPersonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +289,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RNP7AH998X;
 				INFOPLIST_FILE = CoreDataPractice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = idv.Hungju.CoreDataPractice;
@@ -276,6 +302,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RNP7AH998X;
 				INFOPLIST_FILE = CoreDataPractice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = idv.Hungju.CoreDataPractice;
